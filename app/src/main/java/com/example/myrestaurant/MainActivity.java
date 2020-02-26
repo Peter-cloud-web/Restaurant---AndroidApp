@@ -34,8 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 String location = mLocationEditText.getText().toString();
                 Log.d(TAG,location);
                 Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
+                intent.putExtra("location",location);
                 startActivity(intent);
                 Toast.makeText(MainActivity.this, location, Toast.LENGTH_LONG).show();
+
+
 
             }
         });
