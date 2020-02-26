@@ -3,8 +3,11 @@ package com.example.myrestaurant;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button mFindRestaurantsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,4 +15,5 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
+
 }
