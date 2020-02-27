@@ -9,30 +9,33 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    private Button mFindRestaurantsButton;
-    private EditText mLocationEditText;
-    public static final String TAG = MainActivity.class.getSimpleName();
+public class MainActivity extends AppCompatActivity {
+    @BindView(R.id.findRestaurantsButton) Button mFindRestaurantButton;
+    @BindView(R.id.locationEditText) EditText mLocationEditText;
+    @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mFindRestaurantsButton = (Button)findViewById(R.id.findRestaurantsButton);
-        mFindRestaurantsButton.setOnClickListener(new View.OnClickListener() {
+        ButterKnife.bind(this);
+        mFindRestaurantButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //do something
                 String location = mLocationEditText.getText().toString();
-                Log.d(TAG,location);
+
                 Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
                 intent.putExtra("location",location);
                 startActivity(intent);
