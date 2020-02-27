@@ -29,7 +29,7 @@ public class RestaurantsActivityInstrumentationTest {
     @Test
     public void listItemClickDisplaysToastWithCorrectRestaurant() {
         View activityDecorView = activityTestRule.getActivity().getWindow().getDecorView();
-        String restaurantName = "Mi Mero Mole";
+        String restaurantName = "Nairobi";
         onData(anything())
                 .inAdapterView(withId(R.id.listView))
                 .atPosition(0)
